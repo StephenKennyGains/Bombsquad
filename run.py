@@ -28,3 +28,30 @@ to chicken out! \n")
         exit()
     elif play_or_leave == ("y"):
         instructions()
+
+
+def instructions():
+    """
+    Asks player if they would like instructions or if they would like
+    to proceed to board selection.
+    """
+    print("Would you like instructions from us or do you know what to \
+do? \n".upper())
+    for_instructions = input("Press -- i -- for instrctions, press -- \
+b -- to choose board. \n")
+    player_tips_choice = for_instructions
+    instrcution_options = ["i", "b"]
+    if player_tips_choice not in instrcution_options:
+        print("That was not an option".upper())
+        instructions()
+    elif for_instructions == ("i"):
+        print("We need to get you out of the building alive.\nThere are \
+bombs scattered along the corridor and we don't know where \
+they are.\nStarting from row A we need to get you to \
+the end of the corridor.\nYou can move forward one \
+row at a time and choose between four spaces 1, 2, 3 or 4.\
+\nBut you'll need luck on your side.\n".upper())
+        select_board()
+    elif for_instructions == ("b"):
+        print("\nOk let's see what we're dealing with here.\n".upper())
+        select_board()
