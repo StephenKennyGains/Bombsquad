@@ -113,3 +113,73 @@ WASN'T AN OPTION".upper())
         restart_or_leave()
     elif player_choice != bomb:
         print("\nYOU'RE SAFE!")
+
+
+def small_board_play():
+    """
+    Plays out a 4 guess board. If player guesses successfully
+    through 4 spaces, gives message and request to play again
+    or leave. If player guess is a bomb, game over and request
+    restart of leave.
+    """
+    print("BEST OF LUCK IN THERE! YOU HAVE A 32% \
+CHANCE OF MAKING IT OUT ALIVE\n")
+    player_success = 4
+    guess = 0
+    while guess < player_success:
+        choose_row(guess)
+        guess += 1
+        if guess == 1:
+            print("Row A cleared. You now have a 42% \
+chance of making it out alive!\n".upper())
+        elif guess == 2:
+            print("Row B cleared. You now have a 56% \
+chance of making it out alive!\n".upper())
+        elif guess == 3:
+            print("Row C cleared. You now have a 75% \
+chance of making it out alive!\n".upper())
+        elif guess == 4:
+            print("Row D cleared.\n".upper())
+    print("CONGRATULATIONS, YOU MADE IT OUT ALIVE!")
+    restart_or_leave()
+
+
+def large_board_play():
+    """
+    Plays out an 8 guess board. If player guesses successfully
+    through 8 spaces, gives message and request to play again
+    or leave. If player guess is a bomb, game over and request
+    restart of leave.
+    """
+    print("BEST OF LUCK IN THERE! YOU HAVE A 10% \
+CHANCE OF MAKING IT OUT ALIVE\n")
+    player_success = 8
+    guess = 0
+    while guess < player_success:
+        choose_row(guess)
+        guess += 1
+        if guess == 1:
+            print("Row A cleared. You now have a 13% \
+chance of making it out alive!\n".upper())
+        elif guess == 2:
+            print("Row B cleared. You now have a 18% \
+chance of making it out alive!\n".upper())
+        elif guess == 3:
+            print("Row C cleared. You now have a 24% \
+chance of making it out alive!\n".upper())
+        elif guess == 4:
+            print("Row D cleared. You now have a 32% \
+chance of making it out alive!\n".upper())
+        elif guess == 5:
+            print("Row E cleared. You now have a 42% \
+chance of making it out alive!\n".upper())
+        elif guess == 6:
+            print("Row F cleared. You now have a 56% \
+chance of making it out alive!\n".upper())
+        elif guess == 7:
+            print("Row G cleared. You now have a 75% \
+chance of making it out alive!\n".upper())
+        elif guess == 8:
+            print("Row H cleared\n".upper())
+    print("CONGRATULATIONS, YOU MADE IT OUT ALIVE!")
+    restart_or_leave()
