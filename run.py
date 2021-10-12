@@ -88,3 +88,28 @@ Row H without triggering a bomb!!\n".upper())
         print("HERE IS YOUR PATH\n")
         print(large_board)
         large_board_play()
+
+
+def choose_row(guess):
+    """
+    Let's player choose between column 1,2,3,4. If player
+    guess is vaild, check if there has been a bomb randomly
+    assigned in the space. If player choice is a bomb, game over.
+    If player guess is not bomb, move to next row.
+    """
+    row = ["1", "2", "3", "4"]
+    row_random_num = choice(row)
+    bomb = row_random_num
+    player_choice = input("\nCHOOSE YOUR NEXT STEP BETWEEN \
+1, 2, 3 or 4:".upper())
+    if player_choice not in row:
+        print("UNLESS YOU'RE JUMPING OUT A WINDOW, THAT \
+WASN'T AN OPTION".upper())
+        player_choice
+        choose_row(guess)
+    elif player_choice == bomb:
+        print("\nBOOOOOOOOOOOOOOOOOOOOM!!!!!!!!!\n")
+        print("SORRY YOU DIDN'T MAKE IT OUT ALIVE!\n")
+        restart_or_leave()
+    elif player_choice != bomb:
+        print("\nYOU'RE SAFE!")
