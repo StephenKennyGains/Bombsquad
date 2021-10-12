@@ -1,4 +1,4 @@
-from random import *
+from random import choice
 
 
 def start_game():
@@ -57,9 +57,9 @@ row at a time and choose between four spaces 1, 2, 3 or 4.\
         select_board()
 
 
-small_board = "   END \nD . . . .\nC . . . .\nB . . . .\nA . . . .\n \
+SMALL_BOARD = "   END \nD . . . .\nC . . . .\nB . . . .\nA . . . .\n \
 1 2 3 4\n  START\n"
-large_board = "   END \nH . . . .\nG . . . .\nF . . . .\nE . . . .\nD \
+LARGE_BOARD = "   END \nH . . . .\nG . . . .\nF . . . .\nE . . . .\nD \
 . . . .\nC . . . .\nB . . . .\nA . . . .\n  1 2 3 4\n  START\n"
 
 
@@ -80,13 +80,13 @@ out?\n".upper())
         print("\nOk safe choice, just make it from Row A to Row D \
 without triggering a bomb.\n".upper())
         print("HERE IS YOUR PATH\n")
-        print(small_board)
+        print(SMALL_BOARD)
         small_board_play()
     elif select_path == ("2"):
         print("\nI hope luck is on your side!! Make it from Row A to \
 Row H without triggering a bomb!!\n".upper())
         print("HERE IS YOUR PATH\n")
-        print(large_board)
+        print(LARGE_BOARD)
         large_board_play()
 
 
@@ -105,7 +105,6 @@ def choose_row(guess):
     if player_choice not in row:
         print("UNLESS YOU'RE JUMPING OUT A WINDOW, THAT \
 WASN'T AN OPTION".upper())
-        player_choice
         choose_row(guess)
     elif player_choice == bomb:
         print("\nBOOOOOOOOOOOOOOOOOOOOM!!!!!!!!!\n")
@@ -191,8 +190,8 @@ def restart_or_leave():
     leave whether they have been successful or failed.
     """
     print("\nWOULD YOU LIKE TO PLAY AGAIN OR LEAVE?:\n")
-    restart_or_leave = input("PRESS --1-- TO PLAY AGAIN OR --2-- TO LEAVE: ")
-    player_restart_choice = restart_or_leave
+    restart_or_exit = input("PRESS --1-- TO PLAY AGAIN OR --2-- TO LEAVE: ")
+    player_restart_choice = restart_or_exit
     restart_options = ["1", "2"]
     if player_restart_choice not in restart_options:
         print("WELL WE NEED TO EITHER RESTART OR LEAVE, SO LET'S TRY AGAIN:")
@@ -206,7 +205,11 @@ def restart_or_leave():
 
 
 def main():
+    """
+    Runs through entire process
+    """
     start_game()
     start_or_leave()
+
 
 main()
