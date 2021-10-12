@@ -183,3 +183,30 @@ chance of making it out alive!\n".upper())
             print("Row H cleared\n".upper())
     print("CONGRATULATIONS, YOU MADE IT OUT ALIVE!")
     restart_or_leave()
+
+
+def restart_or_leave():
+    """
+    Asks player if they would like to restart game or
+    leave whether they have been successful or failed.
+    """
+    print("\nWOULD YOU LIKE TO PLAY AGAIN OR LEAVE?:\n")
+    restart_or_leave = input("PRESS --1-- TO PLAY AGAIN OR --2-- TO LEAVE: ")
+    player_restart_choice = restart_or_leave
+    restart_options = ["1", "2"]
+    if player_restart_choice not in restart_options:
+        print("WELL WE NEED TO EITHER RESTART OR LEAVE, SO LET'S TRY AGAIN:")
+        restart_or_leave()
+    elif player_restart_choice == ("1"):
+        print("\nGREAT LET'S GO AGAIN\n")
+        select_board()
+    elif player_restart_choice == ("2"):
+        print("\nTHANKS FOR PLAYING. SEE YOU AGAIN SOON!\n")
+        exit()
+
+
+def main():
+    start_game()
+    start_or_leave()
+
+main()
