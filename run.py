@@ -55,3 +55,9 @@ row at a time and choose between four spaces 1, 2, 3 or 4.\
     elif for_instructions == ("b"):
         print("\nOk let's see what we're dealing with here.\n".upper())
         select_board()
+
+
+small_board = "   END \nD . . . .\nC . . . .\nB . . . .\nA . . . .\n \
+1 2 3 4\n  START\n"
+large_board = "   END \nH . . . .\nG . . . .\nF . . . .\nE . . . .\nD \
+. . . .\nC . . . .\nB . . . .\nA . . . .\n  1 2 3 4\n  START\n"
