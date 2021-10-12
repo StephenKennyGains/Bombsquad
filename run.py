@@ -61,3 +61,30 @@ small_board = "   END \nD . . . .\nC . . . .\nB . . . .\nA . . . .\n \
 1 2 3 4\n  START\n"
 large_board = "   END \nH . . . .\nG . . . .\nF . . . .\nE . . . .\nD \
 . . . .\nC . . . .\nB . . . .\nA . . . .\n  1 2 3 4\n  START\n"
+
+
+def select_board():
+    """
+    Asks player if they would like to take the long route or the short route
+    Long route will play 8 steps, short plays 4 steps.
+    """
+    print("Do you want to take the short way out or risk the long way \
+out?\n".upper())
+    select_path = input("Press -- 1 -- for short, press -- 2 -- for long. \n")
+    player_path_choice = select_path
+    path_options = ["1", "2"]
+    if player_path_choice not in path_options:
+        print("That was not an option")
+        select_board()
+    elif select_path == ("1"):
+        print("\nOk safe choice, just make it from Row A to Row D \
+without triggering a bomb.\n".upper())
+        print("HERE IS YOUR PATH\n")
+        print(small_board)
+        small_board_play()
+    elif select_path == ("2"):
+        print("\nI hope luck is on your side!! Make it from Row A to \
+Row H without triggering a bomb!!\n".upper())
+        print("HERE IS YOUR PATH\n")
+        print(large_board)
+        large_board_play()
