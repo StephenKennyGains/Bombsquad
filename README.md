@@ -18,14 +18,12 @@ To play through the game, click on the link below this mockup presentation.
 - [UX](#ux)
     - [Site goals](#site-goals)
     - [User goals](#user-goals)
-    - [Wireframes](#wireframes)
+    - [Flowchart](#flowchart)
 - [Features](#features)
     - [Existing Features](#existing-features)
     - [Features Left To Imlement](#features-left-to-implement)
 - [Testing](#testing)
-    - [HTML](#HTML)
-    - [CSS](#CSS)
-    - [JavaScript](#JavaScript)
+    - [Python](#python)
 - [Code Validation](#validator-testing)
 - [Unfixed Bugs](#unfixed-bugs)
 - [Performance testing](#performance-testing)
@@ -38,139 +36,114 @@ To play through the game, click on the link below this mockup presentation.
 
 ## Site goals
 
-The aim of this game is to have players test their luck and see how far that luck can carry them. The site is a demonstration of pythons programming capabilities for various usage. Given the low statistical chance of success through the more difficult game mode, the game offers a high re-playability.
+Being a temrinal based program. There is very little design behind the page hosting the platform. Instead the emphasis for design has been put in to the content of the program itself. I have aimed to keep the program as easy to follow as possible while maintaining some element of user engagment and enjoyability. To make the game more engaging, I displayed the users probability of making it from one end of the hallway to the other with each correct guess, giving a sense of progression and achievement for beating the odds. The aim of this game is to have players test their luck and see how far that luck can carry them. The site is a demonstration of pythons programming capabilities for various usage. Given the low statistical chance of success through the more difficult game mode, the game offers a high re-playability.
 
 ## User goals:
 - The user should feel that the program is easy to both run and understand.
 - The user will be able to replay the game to test their luck in unfavouring odds.
 - The player should find a sense of joy and achievement by successfully reaching the final stage.
 
-## Wireframes
+## Flowchart
 
-The wireframe for the project was done through Adode XD which made the project a lot easier to implement on the HTML and CSS front as it gives accurate sizes and layout. Although the end result deviated slighlty from the Wireframe, this was a personal choice of how I felt it looked through the various screen sizes.
+The flowchart for this program was made on LucidChart as recommended in the walkthrough project. The flowchart takes you through both the development strategy for the program and the user experiecne and where their options are to continue or exit the program and to be given additional instructions on the game along with difficulty choices.
 
-![Wireframe Desktop](assets/images/wireframe-desktop.png)
-![Wireframe Mobile](assets/images/wireframe-mobile.png)
+![Flowchart](images/Flowchart_bombsquad.png)
 
 ## Features 
 
-The quiz is designed with simplicity in mind. The layout is kept very minimal and with an aim at keeping the quiz very accessible for both desktop and mobile users. The structure follows a simple multiple choice structure with a question given and four possible answers, only one of which is correct.
+This game does not invlove around skill and instead invloves around luck. To create a better user experience I wanted to ensure I gave adequate options for both explaining the game or proceeding and to have the option of a short or long game. The reason for this is that since the game reveloves around luck over skill, by creating a 4 choice and an 8 choice playing board, the probability of success dramatically changes form each board. 
 
 ### Existing Features
 
-- __Top Tier Trivia Logo and Heading__
+- __User Prompt and Welcome__
 
-  - At the top of the page, the logo for streamer ZedNG is featured, alongside the name of the game and page so that users immediately see they have landed at the correct location.
+  - The first stage to the program is basic with a simple message to welcome to the game with the title clearly displayed along with a prompt asking for the users name in an input field which is then relayed back to them in the following line. This is to show the user how the input function will work throughout the remainder of the game and to give them feedback to show them that their input is being received by the program.
 
-![Logo and Title](assets/images/logo_and_title.png)
+![Welcome and User Prompt](images/terminal_initial_prompt.png)
 
-- __The Score Area__
+- __Instructions__
 
-  - The score area is show directly below the header and logo to show the user that this is part of the game immediately. It was previously shown at the bottom of the page but being shown at the top, gives the user a clearer idea of the games intentions on first glance. The score will only increase on correct answers and will give 5 points. 
-  - To give it some additional focus I gave it a short text prompt of points- in front of it and a rounded background to highlight it.
+  - The second feature is to give the option for instructions for the user or to proceed straight to board selection. Although new users may want some guidance on how to play, I wanted to leave the option available to a recurring player to bypass this stage and go straight to board selection.
 
-![Points](assets/images/points_area.png)
+![Instructions](images/terminal_instructions.png)
 
-- __The Question and Answer section__
+- __Board Selection and Display__
 
-  - The question area contains a simple start button and blank background to begin with and four blank button options below that.
-  - After pressing start, the start button will be hidden and the first question of the game will populate along with the first four possible answers to that question. 
+  - The first prompt for the user to initiate the game is to choose the length of their game, choosing between a short path and a long path.
+  - A different message will show to the user depending on their choice of board length to give a sense of the level of difficulty ahead.
+  - When selected the baord will then display in a format that gives the player a more visual representation of the aim of the game showing 4 columns and either 4 or 8 rows depending on the user choice.
+  - There is a start and an end displayed and the rows are lettered and columns numbered which are then relayed back to the user as they progress through the game. 
 
-![Question Start](assets/images/question_area_blank.png)
-![Question Populated](assets/images/question_area_filled.png)
+![Board Selection and Display](images/terminal_select_board.png)
+
+- __Board Run Through__
+
+ - After the board has been selected the user now has inputs to be made to choose whether their next step will be 1, 2, 3 or 4 with the aim to choose a position with no hidden bomb. The initial message will also give them the probability percentage of them guessing correctly through the whole level.
+ - If the player selects a position with a randomly allocated bomb, the display will show them BOOM and that they have died and give the option to try aain or exit the program.
+ - If a player makes it through a stage, they will be given a new probability of making it to the end successfully and tell them they are safe.
+ - Upon reaching the end the player is congratulted and given the choice to either play again or to exit the program.
+
+ ![Board Run Through](images/terminal_playthrough.png)
 
 ### Features Left to Implement
 
-- With More time, I would add an option to simply end game instead of restarting and have the score displayed as the users highest score so it could be screen shotted and shared
-- To avoid users being able to simply google questions, with more time for the project, I would add a 10 second timer to each question before moving to the next question.
-- As this will be used by the same user as my first Project, I will add a crossover between my first deployed website and this page or simply intergrate this into the first submitted project.
+- There are some features I have thought about including and have been relying on feedback from users as to whether they would improve the experience.
+- The first would be to update the board display with each xtep for the user. To do this I would put the small and large board into a lit and then display the list to the user after each step to show them how many steps are left. This will left out originally to avoid over crowding the terminal but feel this could be avoided by clearing the terminal after each guess.
+- The second feature to implement would be relaying back to the user their posiiton of death or executing a bomb on their previous turns. Although I did put this in as a feature in my initial development, I removed it after as I felt that on the long board play it could be detering to a user to see multiple failed attempts given how unlikely it is for a user to succeed throughthe long board. To get around this I would only diplay the most recent playthrough and offer one free skip of a row as an incentive to play again
 
 ## Testing 
 
-### __HTML__
+### __Python__
 
-- The Html of the page is very simplistic and was completed very quickly after developing the wireframe for the site. 
-- The only complicated section of the HTML was upon implemeting some of the attributes to be linked to the JS file, particularly-
-    - The question area containing the following line input type="hidden" id="currentQuestion" value="0"/ which allows the js file to identify the current positon of the questions and answers array. I got inspiration for this from the first Youtube video linked in the credits below.
-    - And the id="answer-choice-0" onClick="checkAnswer(0)" on the answer buttons so that the answers in the array could be assigned to the individual buttons and have a function when selected. I orignally had an issue with this feature until I had added this to the HTML. I had assumed the JS would automatically assign to the buttons and played with the js file before realising there was nothing present to actually guide the answers to this section.
-
-### __CSS__
-
-- The CSS went through normal teething issues with responsive design. I made several adjustments to try avoid removing the logo from the header section on mobile.
-- Flex box was used in most sections to give smoother transitions to screen sizes, particulalry in the answer Divs.
-- One issue I encountered which was not resolved was that similarly to the start button, I originally had the answer buttons highlight when they were hovered over, however the JS function which highlights the buttons red or green for correct and incorrect answers would remove this feature but only on buttons which had been selected. Having looked through the function, having the buttons reset to their original state by looping back through the function of moveToNextQuestion instead of simply updating the color back to black, may solve the issue but due to time, this has not been tested yet.
-
-
-### __JavaScript__
-
-- The javascript gave me he most issues and a lot of additional study was needed and has been mentioned in the credits section below.
-- The first step was implementing the start quiz function to have the start button remove from the screen and populate the first questions and answers from the questions array.
-- The first issue encountered was that although I had written the moveToNextFunction as it currently stands (although I had previously written in bracket notation), I had not put in the html elements which allowed the function to actually populate on screen. I reviewed through this several times before realising that it could possibly be correct but had nothing allowing it be displayed. This is when the elements listed int he HTML section above were added which resolved the issue.
-- The second issue was in changing the color of the buttons on selection. Originally I had tried using the technique of having a css class called 'hide' which changed the color of the answer divs but had display-none by default and was then removed in the JS. I got this idea from the first Youtube video linked in the credits below. I found that this seemed to be a more complex way of achieving the same outcome and instead reviewed back through the course content to the section of changing style elements directly in Javascript and found this easier to both understand and implement. Only when seeing the highlight issue mentioned in the CSS section above did I realise that the CSS method of changing the colors may help in allowing the highlighting of the answer buttons but I beleive I will achieve this through editing the JS function.
-- The third issue I ran into was that although you could very briefly see the color change to the buttons, the next question would populate immediately after. To get around this I needed to add the setTimeout delay. Again I reviewed through the course material for this to find more inforamtion. Although I knew what I wanted to do with this I still made a mistake with this because I named the function (delay), forgetting that setTimeout was necessary for the function to work and not a changeable name.
-- The restart function was also missing and only when I completed through each question did I see the issue. I used information I had gotten from the website linked in the credits below to implement this function. The functions to do this that I had seen in other projects and videos, seemed more complicated and relied on a lot of additional code. This method of essentially just refreshing the page was the most basic way I could think of to get my desired outcome without adding unneccessay complication.
-- Another issue which was not related to my code was that my editor was not showing the different colors normally associated (such as a funcction or variable turning blue or pink for example, they would just remain as white text) so on a few cases I had to copy my code from github to VS code which I had already installed on my desktop to have isues highlighted easier.
-- Lastly, I had used bracket notation in a lot of the code which I later updated to dot notation after putting the code through JShint.
+- The only major issue I ran in to which took me a while to figure out was in the choose_row function, paired with the board_play functions. When this was set up, the code seemed to be working well and was giving correct failed attepts, correct attempts and playing through the baord length with the correct prompts. I then tested to see whether the function was working correctly when an invalid input was given. I had forgotten to implement this and was easily fixed with the not in synthax already used previously but there was still an issue.
+- When an invalid input was given, the user was then getting a prompted that the guess was invalid but it was still registering it as a guess made. This meant that the user could just enter 4 or 8 invalid guesses and would sucessfully reach the end of game as the fcuntion was checking if the user guesses was less than the amount needed to pass through the game. I originally looked for the issue in the board_play functions and tried a few fixes which did not help and then rechecked the choose_row function. 
+- I found that in the choose_row function I could pass 'guess' into the function as a parameter and then re call the choose_row(guess) function after an incorrect guess which solved the problem and no longer registered the guess as valid and so did not iterate through the fucntion as an attempt.
+- Another minor issue was forgetting to use an =+ when iterating through the user guesses in the board_play functions and a was only using +. This was fixed after a quick revision of the iteration section of the course material.
+- As I found the Github workspace to be slightly less convenient and wanted to test some different methods, I used Visual Studio Code on desktop for writing my code and then transferred this over to github at a later stage. I attempted to use the Guthub extension in VS Code but unfortuately my commits were not registering over to the repository I had made. I was also doing additional study to help understand my code better which was being done through VS Code. Credited below.
+- After running the code through PEP8, there was a few trailing whitespaces and several lines which exceeded the charachter length allowed in python. These were easily rectified. 
 
 
 ### Validator Testing 
 
-- HTML
-    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstephenkennygains.github.io%2FTopTierTrivia%2F)
-- CSS
-    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephenkennygains.github.io%2FTopTierTrivia%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-- JavaScript
-    - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
-      - Warnings found and corrected were some missing ; and the use of bracket notation over dot notation.
-      - The following metrics were returned: 
-      - There are 5 functions in this file.
-      - Function with the largest signature takes 1 arguments, while the median is 0.
-      - Largest function has 10 statements in it, while the median is 6.
-      - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
+- Python
+    - No errors were returned when passing through the official [PEP8](http://pep8online.com/) website. There were orininally some sytax errors which were corrected and are no longer present. 
+
 
 ## Unfixed Bugs
 
-- There is currently a bug which is causing the display of the score section to overlap the title and logo section when displaying on a safari browser. This was noticed by my mentor when he was examining the page, however, after adding additional media queries for multiple sizes, the issue will not resolve. I have tested the view at all browser widths on google chrome running on a windows operating system and cannot find this issue to recify it.
-![Safari View Bug](assets/images/safari-view-bug.png)
-
-- An additional issue outlined below is in explicit height and width of the site logo downgrading perfromance despite being given explicit height and width dimensions.
+- There are no unfixed bugs at present.
 
 ## Performance Testing
 
-The page was tested for performance through lighthouse and the image below shows the results of testing. Unfortunately the page was marked down in performance due to a lack of explicit width and height dimensions for the logo png. Despite updating the sizing to use explicit dimensions and added to media queries too, the performance issue remained.
-![Lighthouse Testing](assets/images/lighthouse_desktop_results.png)
+The page was tested by friends to try and see if they could find any glaring issues with the program and to see if they could find a way to either break it or to bypass the functions to get to the end of the game and no issue shave yet been found. 
 
 ## Deployment 
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
-
-  To run localy:
-- Log in to GitHub and click on repository to download ([TopTierTrivia](https://github.com/StephenKennyGains/TopTierTrivia))
-- select `Code` and click Download the ZIP file.
-- after download you can extract the file and use it in your local environment 
-
-Alternatively you can [Clone](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-or [Fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo)
-this repository ([TopTierTrivia](https://github.com/StephenKennyGains/TopTierTrivia)) into your github account.
-
-
-The live link can be found here - https://stephenkennygains.github.io/TopTierTrivia/
+- Ensure all code is correct and ready for deployment.
+- Log into Heroku.
+- Click "New" and select "create new app" from the drop-down menu. This is found in the upper right portion of the window.
+- Provide a name for your application, this needs to be unique, and select your region.
+- Click "Create App".
+- Navigate to "Settings" and scroll down to "build packs".
+- Click "build packs" and then click both "python" and "node.js"(node.js is needed for the mock terminal.)
+- Ensure that the python buildpack is above the node.js buildpack, You can click and drag the packs to re-arrange them.
+- Navigate to the "Deploy" section.
+- Scroll down to "Deployment Method" and select "GitHub".
+- Authorize the connection of Heroku to GitHub.
+- Search for your GitHub repository name, and select the correct repository.
+- For Deployment there are two options, Automatic Deployments or Manual.
+- Automatic Deployment: This will prompt Heroku to re-build your app each time you push your code to GitHub.
+- Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so.
+- Ensure the correct branch is selected "master/Main", and select the deployment method that you desire. In this case, I will be using Automatic Deployment.
 
 
 ## Credits 
 
- - [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k). I got inspiration for some sections of this quiz from this youtube video but felt that some of the code was excessive for the outcome I wanted. Watching the video through though helped me realise my errors in the HTML elements not calling the JS file.
- - [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2203s). This video again seemed to have more complication that I felt was necessary but gave me inspiration for additional features that I would like to implement in the future.
- - [Javascript.info](https://javascript.info/) I found this web page hugely helpful. It gave me a better understanding of some of the core elements of my code and also gave me the idea for the restart function in my code. 
- - I had reviewed through some Peer-review submission on slack buthad ran in to the same issue as the videos listed above in that they had some more complexity than I thought necessary. I wanted my code and page to be clean and concise and took more inspiration from the LoveMaths walkthrough than peer submissions.
+ - Ardit Sulce- The Python Mega Course. I have not linked the site for this credit as I purchsed the course through StackSocial. I believe the original course loaction was through Udemy which was then sold onto StackSocial as a part of a developer learning bundle which I have found very helpful. Athough the course material from Code Institute does explain all the same methods which I used in my project, I personally struggle to use and grasp concepts if I do not understand exactly how and why a process is working. I found this course by Ardit Sulce very informative and helpful for helping me underastand the basic priciples for a lot of the code used in basic Python. The processes were broken down to a very simple level and is something I wish was done more in our own course material as I feel some information is given ina bit of a complex manner which is more aplliacable to those with more development experience. I will continue through the remainder of his course on building 10 real world applications to try and learn more on Python as I progress through the Code Institute material.
 
 ### Content 
 
-- The logo on the page is taken from games Streamer and friend, ZedNG. [ZedNG](https://www.twitch.tv/zedng)
-- Questions and answers were also inspired by ZedNG from his knowledge of football trivia.
+- No additional content has been added to this site.
 
 ### Media
 
