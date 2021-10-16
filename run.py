@@ -1,9 +1,10 @@
 from random import choice
 
 
+# Initial Message and Player Name Entry
 def start_game():
     """
-    Asks player for their Name and used the name to prompt
+    Asks player for their Name and uses the name to prompt
     player selection to continue or leave
     """
     print("\nWELCOME TO BOMBSQUAD \n")
@@ -11,10 +12,11 @@ def start_game():
     print(f"\nOK {player_name}, ARE YOU READY TO BEGIN? \n")
 
 
+# Player Option to continue to game or exit program
 def start_or_leave():
     """
-    Asks player if they wish to continue and if so offer instructions
-    If player selects no, bring back to start, or re prommpt invalidity.
+    Asks player if they wish to continue and if so offer instructions.
+    If player selects no, exit program or re prommpt invalidity.
     """
     play_or_leave = input("Press -- y -- to continue, press -- n -- \
 to chicken out! \n")
@@ -30,6 +32,7 @@ to chicken out! \n")
         instructions()
 
 
+# Offer player instructions or move to board selection
 def instructions():
     """
     Asks player if they would like instructions or if they would like
@@ -37,7 +40,7 @@ def instructions():
     """
     print("Would you like instructions from us or do you know what to \
 do? \n".upper())
-    for_instructions = input("Press -- i -- for instrctions, press -- \
+    for_instructions = input("Press -- i -- for instructions, press -- \
 b -- to choose board. \n")
     player_tips_choice = for_instructions
     instrcution_options = ["i", "b"]
@@ -45,11 +48,11 @@ b -- to choose board. \n")
         print("That was not an option".upper())
         instructions()
     elif for_instructions == ("i"):
-        print("We need to get you out of the building alive.\nThere are \
-bombs scattered along the corridor and we don't know where \
-they are.\nStarting from row A we need to get you to \
-the end of the corridor.\nYou can move forward one \
-row at a time and choose between four spaces 1, 2, 3 or 4.\
+        print("\nWe need to get you out of the building alive.\n\
+There are bombs hidden along the corridor. \
+\nStarting from row A, get to the end of the corridor. \
+\nYou can move forward one row at a time.\
+\nChoose between four spaces- 1, 2, 3 or 4.\
 \nBut you'll need luck on your side.\n".upper())
         select_board()
     elif for_instructions == ("b"):
@@ -63,9 +66,10 @@ LARGE_BOARD = "   END \nH . . . .\nG . . . .\nF . . . .\nE . . . .\nD \
 . . . .\nC . . . .\nB . . . .\nA . . . .\n  1 2 3 4\n  START\n"
 
 
+# Player option to select long board or short board
 def select_board():
     """
-    Asks player if they would like to take the long route or the short route
+    Asks player if they would like to take the long route or the short route.
     Long route will play 8 steps, short plays 4 steps.
     """
     print("Do you want to take the short way out or risk the long way \
@@ -90,6 +94,7 @@ Row H without triggering a bomb!!\n".upper())
         large_board_play()
 
 
+# Sets player choice outcome from win, lose or invalid
 def choose_row(guess):
     """
     Let's player choose between column 1,2,3,4. If player
@@ -114,6 +119,7 @@ WASN'T AN OPTION".upper())
         print("\nYOU'RE SAFE!")
 
 
+# Iterates through small board of 4 guesses
 def small_board_play():
     """
     Plays out a 4 guess board. If player guesses successfully
@@ -143,6 +149,7 @@ chance of making it out alive!\n".upper())
     restart_or_leave()
 
 
+# Iterates through large board of 8 guesses
 def large_board_play():
     """
     Plays out an 8 guess board. If player guesses successfully
@@ -184,6 +191,7 @@ chance of making it out alive!\n".upper())
     restart_or_leave()
 
 
+# Gives player option to try again or exit program after play
 def restart_or_leave():
     """
     Asks player if they would like to restart game or
@@ -204,6 +212,7 @@ def restart_or_leave():
         exit()
 
 
+# Runs Game
 def main():
     """
     Runs through entire process
